@@ -1,40 +1,6 @@
 import { useEffect } from "react";
 
 export default function CountDown() {
-  const flipAllCards = (time: number) => {
-    const segundosPorDia = 86400;
-    const segundosPorHora = 3600;
-    const segundosPorMinuto = 60;
-
-    const dias = Math.floor(time / segundosPorDia);
-    time %= segundosPorDia;
-
-    const horas = Math.floor(time / segundosPorHora);
-    time %= segundosPorHora;
-
-    const minutos = Math.floor(time / segundosPorMinuto);
-    time %= segundosPorMinuto;
-
-    const segsRestantes = time;
-
-    flip(document.querySelector("[data-hours-tens]"), Math.floor(horas / 10));
-    flip(document.querySelector("[data-hours-ones]"), horas % 10);
-
-    flip(
-      document.querySelector("[data-minutes-tens]"),
-      Math.floor(minutos / 10)
-    );
-    flip(document.querySelector("[data-minutes-ones]"), minutos % 10);
-    flip(document.querySelector("[data-days-tens]"), Math.floor(dias / 10));
-    flip(document.querySelector("[data-days-ones]"), dias % 10);
-
-    flip(
-      document.querySelector("[data-seconds-tens]"),
-      Math.floor(segsRestantes / 10)
-    );
-    flip(document.querySelector("[data-seconds-ones]"), segsRestantes % 10);
-  };
-
   const flip = (flipCard: Element | null, newNumber: number) => {
     if (!flipCard) return;
     const top = flipCard.querySelector(".top");
@@ -75,14 +41,49 @@ export default function CountDown() {
       const currentTime = new Date().getTime();
       const totalCountDownTime = Math.ceil((startTime - currentTime) / 1000);
       if (totalCountDownTime == 0) clearInterval(interval);
+      const flipAllCards = (time: number) => {
+        const segundosPorDia = 86400;
+        const segundosPorHora = 3600;
+        const segundosPorMinuto = 60;
 
+        const dias = Math.floor(time / segundosPorDia);
+        time %= segundosPorDia;
+
+        const horas = Math.floor(time / segundosPorHora);
+        time %= segundosPorHora;
+
+        const minutos = Math.floor(time / segundosPorMinuto);
+        time %= segundosPorMinuto;
+
+        const segsRestantes = time;
+
+        flip(
+          document.querySelector("[data-hours-tens]"),
+          Math.floor(horas / 10)
+        );
+        flip(document.querySelector("[data-hours-ones]"), horas % 10);
+
+        flip(
+          document.querySelector("[data-minutes-tens]"),
+          Math.floor(minutos / 10)
+        );
+        flip(document.querySelector("[data-minutes-ones]"), minutos % 10);
+        flip(document.querySelector("[data-days-tens]"), Math.floor(dias / 10));
+        flip(document.querySelector("[data-days-ones]"), dias % 10);
+
+        flip(
+          document.querySelector("[data-seconds-tens]"),
+          Math.floor(segsRestantes / 10)
+        );
+        flip(document.querySelector("[data-seconds-ones]"), segsRestantes % 10);
+      };
       flipAllCards(totalCountDownTime);
     }, 250);
 
     return () => {
       clearInterval(interval);
     };
-  }, [flipAllCards]);
+  }, []);
 
   return (
     <div className="countdown-wrapper text-custom-gender z-34 flex flex-col items-center justify-center">
