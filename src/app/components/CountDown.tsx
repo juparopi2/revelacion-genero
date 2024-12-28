@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 
 export default function CountDown() {
-  const flipAllCards = (time: any) => {
+  const flipAllCards = (time: number) => {
     const segundosPorDia = 86400;
     const segundosPorHora = 3600;
     const segundosPorMinuto = 60;
@@ -35,24 +35,34 @@ export default function CountDown() {
     flip(document.querySelector("[data-seconds-ones]"), segsRestantes % 10);
   };
 
-  const flip = (flipCard: any, newNumber: any) => {
+  const flip = (flipCard: Element | null, newNumber: number) => {
+    if (!flipCard) return;
     const top = flipCard.querySelector(".top");
     const bottom = flipCard.querySelector(".bottom");
-    const startNumber = flipCard.querySelector(".top").textContent;
+    const topElement = flipCard.querySelector(".top");
+    const startNumber = topElement ? topElement.textContent : "";
 
-    if (newNumber == startNumber) return;
+    if (newNumber === Number(startNumber)) return;
 
-    top.textContent = startNumber;
-    bottom.textContent = startNumber;
-    flipCard.dataset.currentNumber = newNumber;
-    flipCard.dataset.nextNumber = newNumber;
+    if (top) {
+      top.textContent = startNumber;
+    }
+    if (bottom) {
+      bottom.textContent = startNumber;
+    }
+    (flipCard as HTMLElement).dataset.currentNumber = newNumber.toString();
+    (flipCard as HTMLElement).dataset.nextNumber = newNumber.toString();
 
     flipCard.addEventListener("animationstart", () => {
-      top.textContent = newNumber;
+      if (top) {
+        top.textContent = newNumber.toString();
+      }
     });
 
     flipCard.addEventListener("animationend", () => {
-      bottom.textContent = newNumber;
+      if (bottom) {
+        bottom.textContent = newNumber.toString();
+      }
       flipCard.classList.remove("flip");
     });
 
@@ -63,7 +73,7 @@ export default function CountDown() {
     const startTime = new Date(2025, 1, 1, 12, 0, 0).getTime();
     const interval = setInterval(() => {
       const currentTime = new Date().getTime();
-      var totalCountDownTime = Math.ceil((startTime - currentTime) / 1000);
+      let totalCountDownTime = Math.ceil((startTime - currentTime) / 1000);
       if (totalCountDownTime == 0) clearInterval(interval);
 
       flipAllCards(totalCountDownTime);

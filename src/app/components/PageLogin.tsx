@@ -1,8 +1,6 @@
 import { User } from "@/app/context/UserContext";
 import Login from "@/app/components/Login";
 import LoginHero from "./LoginHero";
-import { BackgroundLines } from "./external/background-lines";
-import CountDown from "./CountDown";
 
 interface LoginProps {
   user: User;

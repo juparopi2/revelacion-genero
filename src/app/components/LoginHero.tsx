@@ -1,5 +1,3 @@
-import { BackgroundLines } from "./external/background-lines";
-
 export default function LoginHero() {
   return (
     <article className="z-30">

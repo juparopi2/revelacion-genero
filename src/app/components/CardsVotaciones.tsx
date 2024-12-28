@@ -4,9 +4,10 @@ import { useEffect, useState } from "react";
 import { IconGenderMale } from "../icons/IconGenderMale";
 import { IconGenderFemale } from "../icons/IconGenderFemale";
 import { cn } from "../lib/utils";
+import { User } from "../context/UserContext";
 
 export default function CardsVotaciones() {
-  const [votaciones, setVotaciones] = useState<any[]>([]);
+  const [votaciones, setVotaciones] = useState<User[]>([]);
   const countM = votaciones.filter(
     (votacion) => votacion.genero === "M"
   ).length;
@@ -32,7 +33,7 @@ export default function CardsVotaciones() {
       <div className="w-full grid grid-flow-dense grid-cols-12 gap-4 h-fit z-40 px-4">
         {votaciones.map((votacion) => (
           <Card
-            key={votacion.id}
+            key={votacion.celular}
             nombre={votacion.nombre}
             genero={votacion.genero}
           />

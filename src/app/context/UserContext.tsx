@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useState, useEffect } from "react";
+import React, { createContext, useContext, useState, useEffect } from "react";
 
 export interface User {
   nombre: string;
@@ -8,9 +8,15 @@ export interface User {
   genero: string;
 }
 
-const UserContext = createContext({} as any);
+const UserContext = createContext(
+  {} as { user: User; setUser: React.Dispatch<React.SetStateAction<User>> }
+);
 
-export const UserContextProvider = ({ children }: any) => {
+export const UserContextProvider = ({
+  children,
+}: {
+  children: React.ReactNode;
+}) => {
   const [user, setUser] = useState<User>({
     nombre: "",
     celular: "",

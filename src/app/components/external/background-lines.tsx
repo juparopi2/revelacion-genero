@@ -187,7 +187,7 @@ const SVG = ({
       transition={{ duration: 1 }}
       className="absolute inset-0 w-full h-full z-0"
     >
-      {[...Array(5)].map((_, repeatIndex) =>
+      {[...Array(5)].map(() =>
         paths.map((path, idx) => (
           <motion.path
             d={path}
@@ -197,7 +197,7 @@ const SVG = ({
             variants={pathVariants}
             initial="initial"
             animate="animate"
-            style={{zIndex: 10}}
+            style={{ zIndex: 10 }}
             transition={{
               duration: svgOptions?.duration || 70,
               ease: "linear",
