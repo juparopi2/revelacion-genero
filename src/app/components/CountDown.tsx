@@ -73,7 +73,7 @@ export default function CountDown() {
     const startTime = new Date(2025, 1, 1, 12, 0, 0).getTime();
     const interval = setInterval(() => {
       const currentTime = new Date().getTime();
-      let totalCountDownTime = Math.ceil((startTime - currentTime) / 1000);
+      const totalCountDownTime = Math.ceil((startTime - currentTime) / 1000);
       if (totalCountDownTime == 0) clearInterval(interval);
 
       flipAllCards(totalCountDownTime);
@@ -82,7 +82,7 @@ export default function CountDown() {
     return () => {
       clearInterval(interval);
     };
-  }, []);
+  }, [flipAllCards]);
 
   return (
     <div className="countdown-wrapper text-custom-gender z-34 flex flex-col items-center justify-center">
