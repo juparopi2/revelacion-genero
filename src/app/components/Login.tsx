@@ -26,7 +26,7 @@ export default function Login(props: LoginProps) {
         .eq("celular", phone)
         .single();
 
-      if (error) throw error;
+      if (error) return;
 
       if (data) {
         setUser(data);
