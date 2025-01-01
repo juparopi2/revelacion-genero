@@ -14,11 +14,16 @@ export default function Login(props: LoginProps) {
   const { user, setUser } = props;
   const [phone, setPhone] = useState("");
   const [gender, setGender] = useState("");
+  const [error, setError] = useState("");
   const [showAdditionalFields, setShowAdditionalFields] = useState(false);
 
   const handlePhoneSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if( phone.length < 10 ) return;
+    setError("");
+    if (phone.length < 10) {
+      setError("El teléfono debe tener al menos 10 dígitos");
+      return;
+    }
     try {
       const { data, error } = await supabase
         .from("profiles")
@@ -26,7 +31,12 @@ export default function Login(props: LoginProps) {
         .eq("celular", phone)
         .single();
 
-      if (error) return;
+      if (error) {
+        setError(
+          "Error al buscar el teléfono, intenta de nuevo o contacta a los anfitriones"
+        );
+        return;
+      }
 
       if (data) {
         setUser(data);
@@ -34,11 +44,11 @@ export default function Login(props: LoginProps) {
           setShowAdditionalFields(true);
         }
       } else {
-        setShowAdditionalFields(true);
+        setShowAdditionalFields(false);
       }
     } catch (error) {
       console.log("Error checking phone:", error);
-      setShowAdditionalFields(true);
+      setShowAdditionalFields(false);
     }
   };
 
@@ -80,8 +90,12 @@ export default function Login(props: LoginProps) {
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
         />
+        {error && <p className="text-red-500 text-center">{error}</p>}
         {(!user || user.nombre === "") && (
-          <button className="button-validar text-primary font-bold text-xl" type="submit">
+          <button
+            className="button-validar text-primary font-bold text-xl"
+            type="submit"
+          >
             Validar
             <div className="hoverEffect">
               <div />
