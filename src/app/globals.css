@@ -13,8 +13,6 @@
   font-weight: normal;
 }
 
-
-
 :root {
   font-family: "Lora";
 
@@ -152,6 +150,24 @@ form input {
   box-shadow: 0 2px 3px 0 var(--custom-gender);
 }
 
+@media (max-width: 767px) {
+  .countdown-wrapper .flip-card {
+    min-width: 36px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .countdown-wrapper .flip-card {
+    min-width: 52px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .countdown-wrapper .flip-card {
+    min-width: 82px;
+  }
+}
+
 .countdown-wrapper .top,
 .countdown-wrapper .bottom,
 .countdown-wrapper .flip-card.flip::after,
@@ -160,6 +176,7 @@ form input {
   height: 0.75em;
   line-height: 1;
   overflow: hidden;
+  text-align: center;
 }
 
 .countdown-wrapper .top,
@@ -177,6 +194,7 @@ form input {
   background-color: white;
   border-bottom-left-radius: 0.1em;
   border-bottom-right-radius: 0.1em;
+  justify-content: center;
 }
 
 .countdown-wrapper .flip-card.flip::before {
