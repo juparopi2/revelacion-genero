@@ -2,10 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Romantic Couple";
+  src: url("../app/fonts/Romantic Couple.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Lora";
+  src: url("../app/fonts/Lora-Regular.ttf") format("opentype");
+  font-weight: normal;
+}
+
+
+
 :root {
+  font-family: "Lora";
+
   --color-primary: #5a4626;
-  --color-secondary: #aa8263;
-  --color-background: #d1b697;
+  --color-secondary: #f2ece4;
+  --color-background: #fff;
   --color-tertiary: #666666;
   --color-strong-background: #181818;
   --color-light-background: #313131;
@@ -14,26 +29,34 @@
   --custom-gender-dark: #6e6e6e;
   --custom-gender-light: #b6b6b6;
 
-  --custom-boy: #4aaee2;
-  --custom-girl: #d77fda;
+  --custom-boy: #a3bf8f;
+  --custom-girl: #d9bdba;
 }
 
 .M {
-  --custom-gender: #4aaee2;
-  --custom-gender-dark: #3b87b1;
-  --custom-gender-light: #52c0fc;
+  --custom-gender: #a3bf8f;
+  --custom-gender-dark: #8ba37a;
+  --custom-gender-light: #a3bf8f;
 }
 
 .F {
-  --custom-gender: #d77fda;
-  --custom-gender-dark: #a964ac;
-  --custom-gender-light: #f591f8;
+  --custom-gender: #d9bdba;
+  --custom-gender-dark: #d9bdba;
+  --custom-gender-light: #d9bdba;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Romantic Couple", sans-serif;
 }
 
 input::placeholder {
   color: #7c4f0b;
 }
-
 
 .button-validar {
   display: inline-flex;
@@ -43,7 +66,7 @@ input::placeholder {
   border: 0;
   position: relative;
   overflow: hidden;
-  border-radius: 10rem;
+  border-radius: 1rem;
   transition: all 0.02s;
   font-weight: bold;
   cursor: pointer;
@@ -71,9 +94,9 @@ input::placeholder {
   background: rgb(10, 10, 10);
   background: linear-gradient(
     90deg,
-    rgba(222, 0, 75, 1) 0%,
-    rgba(191, 70, 255, 1) 49%,
-    rgba(0, 212, 255, 1) 100%
+    rgb(236, 185, 202) 0%,
+    #d9bdba 49%,
+    #abcc59 100%
   );
   border-radius: 40rem;
   width: 13rem;

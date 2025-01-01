@@ -87,7 +87,7 @@ export default function CountDown() {
 
   return (
     <div className="countdown-wrapper text-custom-gender z-34 flex flex-col items-center justify-center">
-      <h2 className="text-primary text-center text-lg font-bold">
+      <h2 className="text-primary text-center text-5xl font-bold">
         Te esperamos en la revelación en:{" "}
       </h2>
       <div className="countdown-container">

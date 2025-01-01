@@ -18,6 +18,7 @@ export default function Login(props: LoginProps) {
 
   const handlePhoneSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if( phone.length < 10 ) return;
     try {
       const { data, error } = await supabase
         .from("profiles")
@@ -73,14 +74,14 @@ export default function Login(props: LoginProps) {
     <div className="z-30 bg-background p-4 rounded-lg">
       <form onSubmit={handlePhoneSubmit} className="flex flex-col gap-5 pb-4">
         <input
-          className="rounded-lg w-full bg-secondary p-1 text-primary text-xl font-semibold"
+          className="rounded-lg w-full bg-background p-1 text-primary text-lg font-semibold border-secondary border-4"
           type="text"
           placeholder="Teléfono ..."
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
         />
         {(!user || user.nombre === "") && (
-          <button className="button-validar text-black font-bold" type="submit">
+          <button className="button-validar text-primary font-bold text-xl" type="submit">
             Validar
             <div className="hoverEffect">
               <div />
@@ -95,14 +96,14 @@ export default function Login(props: LoginProps) {
             <div>
               <p className="font-semibold text-lg text-center">
                 {" "}
-                ¿Hola {user.nombre}, de que team eres?
+                ¿Hola {user.nombre}, de que equipo eres?
               </p>
             </div>
             <div className="flex flex-row gap-10 items-center justify-between">
               <div
                 className={cn(
-                  "w-1/2 text-custom-boy rounded-lg p-2 bg-secondary",
-                  gender === "M" && "bg-primary scale-110"
+                  "w-1/2 text-custom-boy rounded-lg p-2 bg-background border-dashed border-4 border-secondary",
+                  gender === "M" && "bg-secondary scale-110"
                 )}
                 onClick={() => setGender("M")}
               >
@@ -110,8 +111,8 @@ export default function Login(props: LoginProps) {
               </div>
               <div
                 className={cn(
-                  "w-1/2 text-custom-girl rounded-lg p-2 bg-secondary",
-                  gender === "F" && "bg-primary scale-110"
+                  "w-1/2 text-custom-girl rounded-lg p-2 bg-background border-4 border-dashed border-secondary",
+                  gender === "F" && "bg-secondary scale-110"
                 )}
                 onClick={() => setGender("F")}
               >
