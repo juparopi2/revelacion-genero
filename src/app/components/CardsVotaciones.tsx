@@ -18,7 +18,7 @@ export default function CardsVotaciones() {
   useEffect(() => {
     async function fetchVotaciones() {
       const { data, error } = await supabase.from("profiles").select("*");
-      if (error) console.error("Error al traer las votaciones", error);
+      if (error) console.log("Error al traer las votaciones", error);
       if (data) {
         setVotaciones(data.filter((votacion) => votacion.genero));
         //setVotaciones(data);
@@ -28,7 +28,10 @@ export default function CardsVotaciones() {
   }, []);
   return (
     <div className="flex flex-col gap-4 w-full items-center justify-center z-40 pb-4">
-      <h3 className="text-5xl font-bold w-full text-center"> Así van las votaciones:</h3>
+      <h3 className="text-5xl font-bold w-full text-center">
+        {" "}
+        Así van las votaciones:
+      </h3>
       <ContadorVotaciones niños={countM} niñas={countF} />
       <div className="w-full grid grid-flow-dense grid-cols-12 gap-4 h-fit z-40">
         {votaciones.map((votacion) => (
