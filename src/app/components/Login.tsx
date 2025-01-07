@@ -88,7 +88,8 @@ export default function Login(props: LoginProps) {
           type="text"
           placeholder="Teléfono ..."
           value={phone}
-          onChange={(e) => setPhone(e.target.value)}
+          onChange={(e) => setPhone(e.target.value.replace(/\D/g, ""))}
+          pattern="[0-9]*"
         />
         {error && <p className="text-red-500 text-center">{error}</p>}
         {(!user || user.nombre === "") && (
