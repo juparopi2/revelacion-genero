@@ -20,10 +20,6 @@ export default function Login(props: LoginProps) {
   const handlePhoneSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
-    if (phone.length < 10) {
-      setError("El teléfono debe tener al menos 10 dígitos");
-      return;
-    }
     try {
       const { data, error } = await supabase
         .from("profiles")
