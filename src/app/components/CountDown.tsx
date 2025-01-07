@@ -36,7 +36,7 @@ export default function CountDown() {
   };
 
   useEffect(() => {
-    const startTime = new Date(2025, 1, 1, 12, 0, 0).getTime();
+    const startTime = new Date(2025, 1, 1, 10, 0, 0).getTime();
     const interval = setInterval(() => {
       const currentTime = new Date().getTime();
       const totalCountDownTime = Math.ceil((startTime - currentTime) / 1000);
