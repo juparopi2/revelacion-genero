@@ -20,6 +20,11 @@ export default function ConfirmarAsistencia() {
             confirmacion_asistencia: asistire,
           })
           .eq("celular", user.celular);
+        if (data) {
+        }
+        if (error) {
+          console.log("Error updating asistencia:", error);
+        }
       }
     };
     updateAsistencia();
@@ -35,6 +40,9 @@ export default function ConfirmarAsistencia() {
           .single();
         if (data) {
           setAsistire(data.confirmacion_asistencia);
+        }
+        if (error) {
+          console.log("Error fetching asistencia:", error);
         }
       }
     };
