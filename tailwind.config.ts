@@ -20,6 +20,8 @@ export default {
         "light-background": "var(--color-light-background)",
         "custom-boy": "var(--custom-boy)",
         "custom-girl": "var(--custom-girl)",
+        "custom-boy-dark" : "var(--custom-boy-dark)",
+        "custom-girl-dark" : "var(--custom-girl-dark)",
       },
     },
   },

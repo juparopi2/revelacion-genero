@@ -27,7 +27,7 @@ export default function CardsVotaciones() {
     fetchVotaciones();
   }, []);
   return (
-    <div className="flex flex-col gap-4 w-full items-center justify-center z-40 pb-4">
+    <div className="flex flex-col gap-4 w-full items-center justify-center z-40 px-4 pb-4">
       <h3 className="text-5xl font-bold w-full text-center">
         {" "}
         Así van las votaciones:
@@ -61,7 +61,7 @@ function Card(props: CardProps) {
   let screenWidthPx = 400;
 
   if (typeof window !== "undefined") {
-    screenWidthPx = window.innerWidth;
+    screenWidthPx = window.innerWidth - 32;
   }
 
   const approxCardWidthPx = baseCardWidthPx + cardTextWidthPx;

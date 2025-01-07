@@ -18,26 +18,26 @@ export default function TarjetaInvitacion(props: TarjetaInvitacionProps) {
                 <p className="text-lg font-medium">
                   {" "}
                   Eres equipo{" "}
-                  <span className="font-semibold text-custom-gender-dark">
+                  <span className="font-bold text-custom-gender-dark">
                     {user.genero === "M" ? "Niño" : "Niña"}
                   </span>
                 </p>
                 <p>
                   {" "}
                   Te esperamos el
-                  <span className="font-semibold text-custom-gender-dark">
+                  <span className="font-bold text-custom-gender-dark">
                     {" "}
-                    Sabado, 1 de Febrero{" "}
+                    Sábado, 1 de Febrero{" "}
                   </span>
                   a las 10 a.m. en{" "}
-                  <span className="font-semibold text-custom-gender-dark">
+                  <span className="font-bold text-custom-gender-dark">
                     {" "}
                     Gipsy Grill Park{" "}
                   </span>
                 </p>
                 <p className="italic">
                   Lleva camisa del{" "}
-                  <span className="font-semibold text-custom-gender-dark ">
+                  <span className="font-bold text-custom-gender-dark ">
                     {" "}
                     color{" "}
                   </span>{" "}

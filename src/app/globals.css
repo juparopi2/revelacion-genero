@@ -27,19 +27,21 @@
   --custom-gender-dark: #6e6e6e;
   --custom-gender-light: #b6b6b6;
 
-  --custom-boy: #a3bf8f;
+  --custom-boy: #abd1dc;
+  --custom-boy-dark: #8fcada;
   --custom-girl: #d9bdba;
+  --custom-girl-dark: #dfb1b1;
 }
 
 .M {
-  --custom-gender: #a3bf8f;
-  --custom-gender-dark: #8ba37a;
-  --custom-gender-light: #a3bf8f;
+  --custom-gender: #abd1dc;
+  --custom-gender-dark: #8fcada;
+  --custom-gender-light: #abd1dc;
 }
 
 .F {
   --custom-gender: #d9bdba;
-  --custom-gender-dark: #d9bdba;
+  --custom-gender-dark: #dfb1b1;
   --custom-gender-light: #d9bdba;
 }
 
@@ -60,7 +62,7 @@ input::placeholder {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 15px 30px;
+  padding: 10px 30px;
   border: 0;
   position: relative;
   overflow: hidden;
@@ -94,7 +96,7 @@ input::placeholder {
     90deg,
     rgb(236, 185, 202) 0%,
     #d9bdba 49%,
-    #abcc59 100%
+    #8fcada 100%
   );
   border-radius: 40rem;
   width: 13rem;

@@ -58,7 +58,7 @@ export default function ConfirmarAsistencia() {
         <button
           className={cn(
             asistire == null
-              ? "opacity-50"
+              ? "opacity-40"
               : asistire == false
               ? "opacity-100"
               : "opacity-10",
@@ -72,7 +72,7 @@ export default function ConfirmarAsistencia() {
         <button
           className={cn(
             asistire == null
-              ? "opacity-50"
+              ? "opacity-60"
               : asistire == true
               ? "opacity-100"
               : "opacity-30",
