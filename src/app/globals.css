@@ -119,7 +119,7 @@ form input {
   @apply rounded-lg w-full bg-secondary p-1 text-primary text-xl font-semibold;
 }
 
-.countdown-wrapper *,
+.countdown-wrapper,
 .countdown-wrapper *::before,
 .countdown-wrapper *::after {
   margin: 0;
