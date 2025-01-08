@@ -302,7 +302,6 @@ form input {
 .form-login {
   animation: opacidad 2s linear forwards;
   opacity: 0;
-  animation-delay: 10s;
 }
 
 @keyframes opacidad {
