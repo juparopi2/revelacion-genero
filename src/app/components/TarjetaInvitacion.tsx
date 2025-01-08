@@ -36,12 +36,12 @@ export default function TarjetaInvitacion(props: TarjetaInvitacionProps) {
                   </span>
                 </p>
                 <p className="italic">
-                  Lleva camisa del{" "}
+                  Lleva una prenda del {" "}
                   <span className="font-bold text-custom-gender-dark ">
                     {" "}
                     color{" "}
                   </span>{" "}
-                  del equipo que escogiste.
+                  del equipo que escogiste.: <span className="text-custom-girl-dark font-bold"> Rosa </span>o <span className="text-custom-boy-dark font-bold">Azul</span>
                 </p>
               </div>
             </div>

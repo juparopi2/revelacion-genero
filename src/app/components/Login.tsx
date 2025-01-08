@@ -77,7 +77,7 @@ export default function Login(props: LoginProps) {
   };
 
   return (
-    <div className="z-30 bg-background p-4 rounded-lg">
+    <div className="z-30 bg-background p-4 rounded-lg form-login">
       <form onSubmit={handlePhoneSubmit} className="flex flex-col gap-5 pb-4">
         <input
           className="rounded-lg w-full bg-background p-1 text-primary text-lg font-semibold border-secondary border-4"

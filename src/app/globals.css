@@ -15,6 +15,7 @@
 
 :root {
   font-family: "Lora";
+  position: relative;
 
   --color-primary: #5a4626;
   --color-secondary: #f2ece4;
@@ -256,4 +257,200 @@ form input {
 .countdown-wrapper .card-container {
   display: flex;
   gap: 0.125em;
+}
+
+.elefante-azul {
+  position: absolute;
+
+  width: 25vw;
+  height: 55vw;
+
+  top: 100vh;
+  left: 20vw;
+  animation: movimientoA 10s linear forwards, pendulo 6s linear infinite;
+}
+
+.login-telefonos {
+  animation: pendulo-titulo 6s linear infinite, movimientoT 10s linear forwards;
+}
+
+.interrogante-azul {
+  position: absolute;
+
+  left: 45vw;
+  animation: movimientoIR 10s linear forwards, pendulo 6s linear infinite;
+}
+
+.interrogante-rosa {
+  position: absolute;
+
+  left: 10vw;
+  animation: movimientoIR 10s linear forwards, pendulo 6s linear infinite;
+}
+
+.elefante-rosa {
+  position: absolute;
+
+  width: 25vw;
+  height: 55vw;
+
+  top: 90vh;
+  left: 80vw;
+  animation: movimientoR 10s linear forwards, pendulo 6s linear infinite;
+}
+
+.form-login {
+  animation: opacidad 2s linear forwards;
+  opacity: 0;
+  animation-delay: 10s;
+}
+
+@keyframes opacidad {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes pendulo-titulo {
+  0% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(4deg);
+  }
+  100% {
+    transform: rotate(-4deg);
+  }
+}
+
+@keyframes pendulo {
+  0% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(-5deg);
+  }
+}
+
+@keyframes movimientoA {
+  0% {
+    top: 100vh;
+    left: 60vw;
+  }
+  20% {
+    top: 80vh;
+    left: 56vw;
+  }
+  40% {
+    top: 60vh;
+    left: 60vw;
+  }
+  60% {
+    top: 40vh;
+    left: 56vw;
+  }
+  80% {
+    top: 20vh;
+    left: 60vw;
+  }
+  100% {
+    top: 0vh;
+    left: 56vw;
+  }
+}
+
+@keyframes movimientoR {
+  0% {
+    top: 100vh;
+    left: 19vw;
+  }
+  20% {
+    top: 80vh;
+    left: 15vw;
+  }
+  40% {
+    top: 60vh;
+    left: 19vw;
+  }
+  60% {
+    top: 40vh;
+    left: 15vw;
+  }
+  80% {
+    top: 20vh;
+    left: 19vw;
+  }
+  100% {
+    top: 0vh;
+    left: 15vw;
+  }
+}
+
+@keyframes movimientoT {
+  0% {
+    top: 100vh;
+  }
+  20% {
+    top: 80vh;
+  }
+  40% {
+    top: 60vh;
+  }
+  60% {
+    top: 40vh;
+  }
+  80% {
+    top: 20vh;
+  }
+  100% {
+    top: 0vh;
+  }
+}
+
+@keyframes movimientoIR {
+  0% {
+    top: 100svh;
+  }
+  20% {
+    top: 100svh;
+  }
+  40% {
+    top: 100svh;
+  }
+  60% {
+    top: 110svh;
+  }
+  80% {
+    top: 90svh;
+  }
+  100% {
+    top: 70svh;
+  }
+}
+
+@keyframes movimientoIA {
+  0% {
+    top: 100vh;
+  }
+  20% {
+    top: 80vh;
+  }
+  40% {
+    top: 60vh;
+  }
+  60% {
+    top: 40vh;
+  }
+  80% {
+    top: 20vh;
+  }
+  100% {
+    top: 0vh;
+  }
 }
