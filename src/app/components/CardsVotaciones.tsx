@@ -61,7 +61,7 @@ function Card(props: CardProps) {
   let screenWidthPx = 400;
 
   if (typeof window !== "undefined") {
-    screenWidthPx = window.innerWidth - 32;
+    screenWidthPx = Math.min(window.innerWidth - 32, 850);
   }
 
   const approxCardWidthPx = baseCardWidthPx + cardTextWidthPx;
