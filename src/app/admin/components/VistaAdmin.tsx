@@ -48,10 +48,36 @@ export default function VistaAdmin() {
   };
 
   return (
-    <section className="pt-4 w-full h-full flex flex-col items-center justify-center">
+    <section className="pt-20 w-full h-full flex flex-col items-center justify-center">
       <h1 className="bg-clip-text text-transparent text-center bg-gradient-to-b from-primary to-amber-950 text-5xl py-2 relative z-20 font-bold tracking-tight">
         Vista Admin
       </h1>
+      <div className="w-full max-w-[450px] flex flex-row gap-2">
+        <div className="w-1/4 flex flex-col items-center justify-center bg-slate-100 rounded-xl p-2">
+          <p className="text-3xl">
+            {profiles.filter((profile) => profile.genero).length}
+          </p>
+          <p className="w-fit text-center">Votos de genero</p>
+        </div>
+        <div className="w-1/4 flex flex-col items-center justify-center bg-slate-100 rounded-xl p-2">
+          <p className="text-3xl">
+            {profiles.filter((profile) => !profile.genero).length}
+          </p>
+          <p className="w-fit text-center">No votó genero</p>
+        </div>
+        <div className="w-1/4 flex flex-col items-center justify-center bg-slate-100 rounded-xl p-2">
+          <p className="text-3xl">
+            {profiles.filter((profile) => profile.confirmacion_asistencia == true).length}
+          </p>
+          <p className="w-fit text-center">Confirmó asistencia</p>
+        </div>
+        <div className="w-1/4 flex flex-col items-center justify-center bg-slate-100 rounded-xl p-2">
+          <p className="text-3xl">
+            {profiles.filter((profile) => !profile.confirmacion_asistencia).length}
+          </p>
+          <p className="w-fit text-center">No asiste o no confirma</p>
+        </div>
+      </div>
 
       <div className="w-full h-full py-2">
         <table className="w-full bg-white shadow-md rounded-lg">
@@ -96,7 +122,9 @@ export default function VistaAdmin() {
               <tr key={profile.id} className="hover:bg-gray-50">
                 <td className="px-1 py-4 text-center">{profile.nombre}</td>
                 <td className="px-1 py-4 text-center">{profile.celular}</td>
-                <td className="px-1 py-4 text-center">{profile.genero}</td>
+                <td className="px-1 py-4 text-center">
+                  {profile.genero ? profile.genero : "🤷‍♂️"}
+                </td>
                 <td className="px-1 py-4 text-center">
                   {profile.confirmacion_asistencia
                     ? "✅"
